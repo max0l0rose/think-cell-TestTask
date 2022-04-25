@@ -2,9 +2,8 @@
 #include <map>
 
 class MyKey {
-	int val;
-
 protected:
+	int val;
 public:
 	MyKey(int v) {
 		val = v;
@@ -27,9 +26,8 @@ public:
 
 
 class MyVal {
-	char val;
-
 protected:
+	char val;
 public:
 	MyVal(char v) {
 		val = v;
@@ -86,10 +84,10 @@ public:
 		for (auto itA = itL; itA != itR;)
 			itA = m_map.erase(itA);
 
-		if (itBeforeBegin == m_map.end() || !(itBeforeBegin->second == val))
+		if (itBeforeBegin == m_map.end() || !(itBeforeBegin->second->getVal() == val->getVal()))
 			m_map[keyBegin] = val;
 
-		if (itBeforeBegin == m_map.end() || !(itBeforeBegin->second == tmpRV))
+		if (itBeforeBegin == m_map.end() || !(itBeforeBegin->second->getVal() == tmpRV->getVal()))
 			m_map[keyEnd] = tmpRV;
 	}
 
